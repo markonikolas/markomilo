@@ -5,3 +5,7 @@
 @import 'abstracts/variables', 'abstracts/mixins';
 
 @import 'base/base', 'base/typography';
+
+@import 'components/menu';
+
+@import 'layouts/header', 'layouts/main';

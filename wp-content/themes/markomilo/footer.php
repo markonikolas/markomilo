@@ -14,8 +14,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 wp_footer();
-?>
-
-<footer>
-this is footer
-</footer>

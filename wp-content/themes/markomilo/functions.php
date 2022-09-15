@@ -26,3 +26,8 @@ require_once get_theme_file_path( '/includes/cleanup.php' );
  * Register site navigation.
  */
 require_once get_theme_file_path( '/includes/navigation.php' );
+
+/**
+ * Add scripts and styles to the theme.
+ */
+require_once get_theme_file_path( '/includes/enqueue.php' );

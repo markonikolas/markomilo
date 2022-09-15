@@ -7,10 +7,15 @@
 
 namespace MarkoMilo;
 
-get_header();
+?>
 
-the_title();
+<main class="main">
+	<?php get_header(); ?>
 
-the_content();
+	<article class="main__content">
+		<?php the_content(); ?>
+	</article>
+</main>
 
+<?php
 get_footer();

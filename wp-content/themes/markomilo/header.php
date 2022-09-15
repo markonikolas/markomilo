@@ -27,16 +27,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php wp_body_open(); ?>
 
 <header class="header">
-	<section class="inner-wrapper">
-		<div class="header__logo"><?php echo get_custom_logo(); // phpcs:ignore ?></div>
-
-		<?php
-		wp_nav_menu(
-			array(
-				'menu'      => 'Primary',
-				'container' => 'nav',
-			)
-		);
-		?>
-	</section>
+	<?php
+	wp_nav_menu(
+		array(
+			'menu'      => 'Primary',
+			'container' => 'nav',
+		)
+	);
+	?>
 </header>

@@ -7,21 +7,24 @@
 
 namespace MarkoMilo;
 
-get_header(); ?>
+?>
 
-<ul>
+<main class="main">
+	<?php get_header(); ?>
 
-	<?php
-	if ( have_posts() ) :
-		while ( have_posts() ) :
-			the_post();
+	<section class="main__content main__blog">
+		<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
 
-			?>
-			<li><?php the_title(); ?></li>
-		<?php endwhile; ?>
-	<?php endif; ?>
+				?>
+				<a class="main__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
-</ul>
+	</section>
+</main>
 
 <?php
 get_footer();
