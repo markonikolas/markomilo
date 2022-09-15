@@ -29,15 +29,15 @@ CMD [ "apache2-foreground" ]
 # DB
 FROM mariadb:10.8 as database
 
-# ARG DUMP=demo.sql.zip
+ARG DUMP=demo.sql.zip
 
 WORKDIR /docker-entrypoint-initdb.d
 
-# COPY ${DUMP} .
+COPY ${DUMP} .
 
 RUN apt update && \
     apt install unzip -y && \
-    # unzip -o ${DUMP} && \
+    unzip -o ${DUMP} && \
     rm -f ${DUMP}
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
