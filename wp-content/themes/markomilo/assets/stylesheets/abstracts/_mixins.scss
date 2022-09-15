@@ -1,0 +1,36 @@
+// Media queries
+$media-queries: (
+    320: 320px,
+    375: 375px,
+    425: 425px,
+    480: 480px,
+    540: 540px,
+    600: 600px,
+    640: 640px,
+    768: 768px,
+    800: 800px,
+    900: 900px,
+    960: 960px,
+    1024: 1024px,
+    1080: 1080px,
+    1140: 1140px,
+    1200: 1200px,
+    1280: 1280px,
+    1300: 1300px,
+    1310: 1310px,
+    1400: 1400px,
+    1440: 1440px,
+    1600: 1600px,
+    1820: 1820px,
+);
+
+@mixin breakpoint($point, $type: min) {
+    @if map-has-key($media-queries, $point) {
+        @media (#{$type}-width: #{map-get($media-queries, $point)}) {
+            @content;
+        }
+    } @else {
+        @error 'There is not value that could be retrieved from "#{$point}". '
+      + 'Please make sure that "#{$point}" is defined in $media-queries map.';
+    }
+}

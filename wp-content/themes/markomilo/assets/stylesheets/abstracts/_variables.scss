@@ -1,0 +1,19 @@
+/// Regular font family
+/// @type List
+$text-font-stack: 'Times Now', serif !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #e20000 !default;
+
+/// Primary color
+/// @type Color
+$primary-color: #000000 !default;
+
+/// Text color
+/// @type Color
+$text-color: $primary-color;
+
+/// White color
+/// @type Color
+$white-color: #ffffff !default;

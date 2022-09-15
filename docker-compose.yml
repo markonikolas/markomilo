@@ -1,0 +1,78 @@
+version: "3.9"
+
+x-wp-env:
+  &wordpress-shared
+  WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST} 
+  WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+  WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+  WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASS}
+  WORDPRESS_ROOT_PASSWORD: ${WORDPRESS_ROOT_PASS}
+  WORDPRESS_TABLE_PREFIX: ${WORDPRESS_DB_PREFIX}
+
+services:
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8000:80
+    restart: on-failure:5
+    environment:
+      PMA_HOST: ${WORDPRESS_DB_HOST}
+
+  db:
+    build:
+      context: .
+      target: database
+    volumes:
+      - db:/var/lib/mysql
+    restart: on-failure:3
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
+      MYSQL_USER: ${WORDPRESS_DB_USER}
+      MYSQL_PASSWORD: ${WORDPRESS_DB_PASS}
+      MYSQL_ROOT_PASSWORD: ${WORDPRESS_ROOT_PASS}
+    cap_add:
+      - SYS_NICE
+
+  web:
+    depends_on:
+      - db
+    env_file: .env
+    build:
+      context: .
+      target: application
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      << : *wordpress-shared
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', '${WORDPRESS_SITE_URL}');
+        define('WP_SITEURL', '${WORDPRESS_SITE_URL}');
+        define('FS_METHOD', 'direct');
+    entrypoint: [ "./wait.sh", "db:3306", "--strict", "--timeout=10", "--", "docker-entrypoint.sh", "apache2-foreground" ]
+
+  wp_cli:
+    depends_on:
+      - web
+      - db
+    container_name: wp_cli
+    image: wordpress:cli
+    environment:
+      << : *wordpress-shared
+      HOME: /tmp
+    user:
+      root
+    volumes:
+      - .:/var/www/html
+    entrypoint: [ "./wait.sh", "db:3306", "--strict", "--timeout=10", "--", "docker-entrypoint.sh", "wp", "--allow-root"]
+
+volumes:
+  db:
+  web:
