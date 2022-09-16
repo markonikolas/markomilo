@@ -32,6 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		array(
 			'menu'      => 'Primary',
 			'container' => 'nav',
+			'walker'    => new Navigation(),
 		)
 	);
 	?>

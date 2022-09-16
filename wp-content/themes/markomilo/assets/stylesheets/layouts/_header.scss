@@ -1,19 +1,15 @@
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
-    width: 220px;
-    height: 100vh;
-    grid-area: header;
+    width: 250px;
 
     .admin-bar & {
         top: 46px;
-        height: calc(100vh - 46px);
 
         @include breakpoint(768) {
             top: 32px;
-            height: calc(100vh - 32px);
         }
     }
 }

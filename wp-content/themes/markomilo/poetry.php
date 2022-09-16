@@ -10,8 +10,9 @@ namespace MarkoMilo;
 
 ?>
 
+<?php get_header(); ?>
+
 <main class="main">
-	<?php get_header(); ?>
 
 	<section class="main__content main__blog">
 		<?php
@@ -19,6 +20,7 @@ namespace MarkoMilo;
 		$args = array(
 			'post_type'      => 'poem',
 			'posts_per_page' => -1,
+			'order'          => 'ASC',
 		);
 
 		$poem_query = new \WP_Query( $args );
@@ -35,5 +37,4 @@ namespace MarkoMilo;
 	</section>
 </main>
 
-<?php
-get_footer();
+<?php get_footer(); ?>

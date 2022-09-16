@@ -13,4 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-wp_footer();
+?>
+
+</body>
+
+<?php wp_footer(); ?>

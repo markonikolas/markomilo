@@ -10,10 +10,14 @@ $brand-color: #e20000 !default;
 /// @type Color
 $primary-color: #000000 !default;
 
-/// Text color
-/// @type Color
-$text-color: $primary-color;
-
 /// White color
 /// @type Color
 $white-color: #ffffff !default;
+
+/// Near black color
+/// @type Color
+$near-black-color: #292a2c;
+
+/// Text color
+/// @type Color
+$text-color: $near-black-color;

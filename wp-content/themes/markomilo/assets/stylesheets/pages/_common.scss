@@ -1,0 +1,39 @@
+/*
+ * Using tag selectors here due 
+ * to nature of WordPress.
+ */
+
+.page-template-default,
+.poem-template-default {
+    .main__content {
+        grid-column: 2 / span 2;
+        gap: 3rem;
+        padding: 5rem 3rem;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 100px;
+        line-height: 115px;
+        margin: 0;
+        color: $primary-color;
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 33px;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        max-width: 650px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 180%;
+    }
+
+    img {
+        margin-block: 40px;
+    }
+}

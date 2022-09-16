@@ -12,11 +12,11 @@ namespace MarkoMilo;
  */
 function poems_init() {
 	$labels = array(
-		'name'                  => _x( 'Poems', 'Post type general name', 'tmcc' ),
+		'name'                  => _x( 'Poem', 'Post type general name', 'tmcc' ),
 		'singular_name'         => _x( 'Poem', 'Post type singular name', 'tmcc' ),
 		'menu_name'             => _x( 'Poems', 'Admin Menu text', 'tmcc' ),
-		'name_admin_bar'        => _x( 'Poems', 'Add New on Toolbar', 'tmcc' ),
-		'add_new'               => __( 'Add New Poem', 'tmcc' ),
+		'name_admin_bar'        => _x( 'Poem', 'Add New on Toolbar', 'tmcc' ),
+		'add_new'               => __( 'Add New', 'tmcc' ),
 		'add_new_item'          => __( 'Add New Poem', 'tmcc' ),
 		'new_item'              => __( 'New Poem', 'tmcc' ),
 		'edit_item'             => __( 'Edit Poem', 'tmcc' ),

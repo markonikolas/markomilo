@@ -1,6 +1,6 @@
 <?php
 /**
- * Main template file.
+ * Page template file.
  *
  * @package markomilo
  */
@@ -9,22 +9,13 @@ namespace MarkoMilo;
 
 ?>
 
+<?php get_header(); ?>
+
 <main class="main">
-	<?php get_header(); ?>
 
-	<section class="main__content main__blog">
-		<?php
-		if ( have_posts() ) :
-			while ( have_posts() ) :
-				the_post();
-
-				?>
-				<a class="main__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			<?php endwhile; ?>
-		<?php endif; ?>
-
-	</section>
+	<article class="main__content">
+		<?php the_content(); ?>
+	</article>
 </main>
 
-<?php
-get_footer();
+<?php get_footer(); ?>
