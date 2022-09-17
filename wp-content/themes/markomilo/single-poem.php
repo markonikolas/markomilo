@@ -31,7 +31,7 @@ if ( ! $next_post ) {
 		<section class="post-meta">
 			<div>
 				<h3 class="post-meta__title"><?php esc_html_e( 'Date:', 'markomilo' ); ?></h3>
-				<p class="post-meta__text"><?php echo get_the_date(); ?></p>
+				<p class="post-meta__text"><?php echo get_the_date( 'd D Y' ); ?></p>
 			</div>
 
 			<div>
