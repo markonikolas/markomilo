@@ -7,10 +7,12 @@
 
 namespace MarkoMilo;
 
-$categories = get_the_category();
+$terms = get_the_terms( $post, 'type' );
 
-if ( ! empty( $categories ) ) {
-	$category = '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+if ( ! empty( $terms ) ) {
+	$custom_term = '<p class="post-meta__text">' . esc_html( $terms[0]->name ) . '</p>';
+} else {
+	$custom_term = 'Uncategorized';
 }
 
 $next_post = get_next_post();
@@ -26,6 +28,7 @@ if ( ! $next_post ) {
 <main class="main">
 
 	<article class="post main__content">
+		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?>
 
 		<section class="post-meta">
@@ -36,12 +39,13 @@ if ( ! $next_post ) {
 
 			<div>
 				<h3 class="post-meta__title"><?php esc_html_e( 'Category:', 'markomilo' ); ?></h3>
-                <p class="post-meta__text"><?php echo $category; // @phpcs:ignore ?></p>
+                <p class="post-meta__text"><?php echo $custom_term; // @phpcs:ignore ?></p>
 			</div>
 
 			<div>
 				<h3 class="post-meta__title"><?php esc_html_e( 'Printed book:', 'markomilo' ); ?></h3>
-				<a class="post-meta__text post-meta__link underline" href="#"><?php esc_html_e( 'Purchase now', 'markomilo' ); ?></a>
+
+				<p class="post-meta__text"><a class="post-meta__link underline" href="#"><?php esc_html_e( 'Purchase now', 'markomilo' ); ?></a></p>	
 			</div>
 		</section>
    

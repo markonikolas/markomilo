@@ -59,3 +59,32 @@ function poems_init() {
 }
 
 add_action( 'init', __NAMESPACE__ . '\poems_init' );
+
+/**
+ * Init Type post taxonomy
+ */
+function register_taxonomy_course() {
+	$labels = array(
+		'name'              => _x( 'Types', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Type', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Types' ),
+		'all_items'         => __( 'All Types' ),
+		'parent_item'       => __( 'Parent Type' ),
+		'parent_item_colon' => __( 'Parent Type:' ),
+		'edit_item'         => __( 'Edit Type' ),
+		'update_item'       => __( 'Update Type' ),
+		'add_new_item'      => __( 'Add New Type' ),
+		'new_item_name'     => __( 'New Type Name' ),
+		'menu_name'         => __( 'Type' ),
+	);
+	$args   = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'type' ),
+	);
+	register_taxonomy( 'type', array( 'poem' ), $args );
+}
+add_action( 'init', __NAMESPACE__ . '\register_taxonomy_course' );
