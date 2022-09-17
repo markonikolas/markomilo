@@ -8,6 +8,17 @@
 namespace Lypheclinic;
 
 /**
+ * Enqueue google fonts
+ */
+function preconnect_fonts() {
+	?>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<?php
+}
+add_action( 'wp_head', __NAMESPACE__ . '\preconnect_fonts' );
+
+/**
  * Theme main enqueues
  */
 function enqueue_assets() {
@@ -27,5 +38,7 @@ function enqueue_assets() {
 		fileatime( get_stylesheet_directory() . '/dist/js/main.js' ),
 		true
 	);
+
+	wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Lora&display=swap', array(), 1.0 );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );

@@ -21,19 +21,38 @@ html {
     box-sizing: inherit;
 }
 
-body {
+main {
+    overflow-x: hidden;
+    background-color: $white-color;
+}
+
+h1 {
     margin: 0;
 }
 
-/**
- * Basic styles for links
- */
+h2 {
+    margin-bottom: 0.5rem;
+}
+
+img {
+    margin: 40px;
+}
+
+figure {
+    margin: 0;
+}
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
-main {
-    overflow-x: hidden;
-    background-color: $white-color;
+p,
+hr {
+    max-width: 650px;
+}
+
+hr {
+    width: 100%;
+    opacity: 0.4;
 }

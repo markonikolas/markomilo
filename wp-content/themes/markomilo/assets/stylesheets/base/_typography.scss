@@ -1,7 +1,26 @@
-/**
- * Basic typography style for copy text
- */
-body {
-  color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+h1 {
+    font: normal 400 100px/115px $heading-font-stack;
+    @extend %heading-color;
+}
+
+h2 {
+    font: normal 400 25px/33px $text-font-stack;
+    @extend %text-color;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Times Now', serif;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    font: normal 400 20px/180% $text-font-stack;
+    @extend %text-color;
 }

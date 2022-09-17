@@ -1,6 +1,10 @@
-/// Regular font family
+/// Heading font family
 /// @type List
-$text-font-stack: 'Times Now', serif !default;
+$heading-font-stack: 'Times Now', serif !default;
+
+/// Text font family
+/// @type List
+$text-font-stack: 'Lora', serif !default;
 
 /// Main brand color
 /// @type Color
@@ -17,6 +21,10 @@ $white-color: #ffffff !default;
 /// Near black color
 /// @type Color
 $near-black-color: #292a2c;
+
+/// Heading color
+/// @type Color
+$heading-color: $primary-color;
 
 /// Text color
 /// @type Color

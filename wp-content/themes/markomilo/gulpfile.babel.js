@@ -102,6 +102,10 @@ export const serve = (done) => {
     done();
 };
 
+export const fonts = (done) => {
+    return src('./assets/fonts/*.otf').pipe(dest('./dist/fonts'));
+};
+
 export const watchForChanges = (done) => {
     watch('assets/stylesheets/**/*.scss', stylesDev);
     watch('assets/scripts/**/*.js', series(scriptsDev, reload));
@@ -111,9 +115,10 @@ export const watchForChanges = (done) => {
 };
 export const dev = series(
     clean,
+    fonts,
     parallel(stylesDev, scriptsDev),
     watchForChanges,
     serve
 );
-export const build = series(clean, parallel(stylesProd, scriptsProd));
+export const build = series(clean, fonts, parallel(stylesProd, scriptsProd));
 export default dev;

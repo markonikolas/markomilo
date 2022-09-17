@@ -1,15 +1,18 @@
 .main {
+    display: grid;
+    place-items: center;
+
     &__content {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 2rem;
+        padding: 5rem 3rem;
     }
 
     &__link {
         position: relative;
-        font-weight: 400;
-        font-size: 70px;
-        line-height: 160%;
+        font: normal 400 70px/160% $heading-font-stack;
         transition: color 350ms ease, transform 350ms ease;
         transform-origin: bottom left;
 
@@ -31,5 +34,10 @@
                 transform: translateX(0);
             }
         }
+    }
+
+    &__list {
+        gap: 0;
+        align-items: flex-end;
     }
 }

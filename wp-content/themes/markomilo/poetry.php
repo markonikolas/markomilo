@@ -14,7 +14,7 @@ namespace MarkoMilo;
 
 <main class="main">
 
-	<section class="main__content main__blog">
+	<section class="main__content main__list">
 		<?php
 
 		$args = array(
@@ -33,7 +33,6 @@ namespace MarkoMilo;
 				<a class="main__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			<?php endwhile; ?>
 		<?php endif; ?>
-
 	</section>
 </main>
 
