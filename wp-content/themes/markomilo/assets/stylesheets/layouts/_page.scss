@@ -1,0 +1,16 @@
+.page-template-default {
+    .main {
+        place-items: center;
+
+        &__content {
+            margin-top: 8rem;
+            padding: 4rem 3rem;
+            transition: margin 500ms ease-out;
+            transition-delay: 250ms;
+
+            @media screen and (orientation: landscape) {
+                margin-top: 2rem;
+            }
+        }
+    }
+}

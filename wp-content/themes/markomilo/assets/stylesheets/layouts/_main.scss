@@ -1,20 +1,42 @@
 .main {
     display: grid;
-    place-items: center;
+    justify-items: end;
+    align-items: center;
+
+    @include breakpoint(1300) {
+        place-items: center;
+    }
 
     &__content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
-        padding: 4rem 3rem;
+        padding-top: 1rem;
+        padding-right: 120px;
+        transition: padding 500ms ease-out;
+        transition-delay: 250ms;
+
+        @include breakpoint(1300) {
+            gap: 2rem;
+            padding: 4rem 3rem;
+        }
     }
 
     &__link {
         position: relative;
-        font: normal 400 70px/160% $heading-font-stack;
+        font: normal 400 35px/220% $heading-font-stack;
 
         @extend %link;
+
+        @include breakpoint(600) {
+            font-size: 55px;
+            line-height: 200%;
+        }
+
+        @include breakpoint(768) {
+            font-size: 70px;
+            line-height: 160%;
+        }
     }
 
     &__list {
