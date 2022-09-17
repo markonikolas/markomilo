@@ -3,16 +3,14 @@
     margin: 0;
 
     &-item {
-        color: $primary-color;
         padding: 1rem;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 28px;
+        font: normal 400 24px/28px $heading-font-stack;
+        color: $primary-color;
         list-style: none;
     }
 }
 
 .current-menu-item {
     color: $brand-color;
-    transform: skewX(-15deg);
+    font-style: italic;
 }

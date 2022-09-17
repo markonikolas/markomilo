@@ -5,3 +5,11 @@
 %text-color {
     color: $text-color;
 }
+
+%body-height {
+    height: calc($screen-height - $adminbar-height);
+
+    @include breakpoint(768) {
+        height: calc($screen-height - $adminbar-height-desktop);
+    }
+}
