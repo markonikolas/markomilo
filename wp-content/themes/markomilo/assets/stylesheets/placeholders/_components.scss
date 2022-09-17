@@ -1,0 +1,10 @@
+@use 'abstracts/variables' as v;
+
+%link {
+    font-size: 70px;
+    line-height: 160%;
+
+    &:hover {
+        color: v.$brand-color;
+    }
+}

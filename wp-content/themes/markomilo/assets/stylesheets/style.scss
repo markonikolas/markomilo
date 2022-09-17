@@ -1,11 +1,6 @@
 @charset "UTF-8";
 
-@import 'vendors/normalize';
+@use 'abstracts' as *;
+@use 'placeholders' as *;
 
-@import 'abstracts/variables', 'abstracts/mixins', 'abstracts/placeholders';
-
-@import 'base/base', 'base/typography';
-
-@import 'components/menu';
-
-@import 'layouts/header', 'layouts/main';
+@import 'vendors', 'utils', 'base', 'components', 'layouts';

@@ -30,14 +30,33 @@ $heading-color: $primary-color;
 /// @type Color
 $text-color: $near-black-color;
 
-/// Adminbar height
-/// @type Length
-$adminbar-height: 46px;
-
-/// Adminbar height desktop
-/// @type Length
-$adminbar-height-desktop: 32px;
-
 /// Screen height
 /// @type Length
 $screen-height: 100vh;
+
+/// Media queries
+/// @type List
+$media-queries: (
+    320: 320px,
+    375: 375px,
+    425: 425px,
+    480: 480px,
+    540: 540px,
+    600: 600px,
+    640: 640px,
+    768: 768px,
+    800: 800px,
+    900: 900px,
+    960: 960px,
+    1024: 1024px,
+    1080: 1080px,
+    1140: 1140px,
+    1200: 1200px,
+    1280: 1280px,
+    1300: 1300px,
+    1310: 1310px,
+    1400: 1400px,
+    1440: 1440px,
+    1600: 1600px,
+    1820: 1820px,
+);

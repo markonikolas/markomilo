@@ -1,0 +1,47 @@
+.post {
+    &-meta {
+        display: flex;
+        gap: 4rem;
+        width: 100%;
+        margin-top: 3rem;
+
+        &__title {
+            font-size: 17px;
+            line-height: 22px;
+
+            @extend %heading-color;
+
+            &--lg {
+                font: normal 400 40px/46px 'Times Now Italic';
+            }
+        }
+
+        &__text {
+            font-size: 20px;
+            line-height: 26px;
+
+            @extend %heading-color;
+
+            &--lg {
+                font-size: 70px;
+                line-height: 80px;
+            }
+        }
+
+        &__link {
+            font-family: 'Times Now', serif;
+            margin-block: 1em;
+        }
+    }
+
+    &-next {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        width: 100%;
+
+        * {
+            margin: 0;
+        }
+    }
+}

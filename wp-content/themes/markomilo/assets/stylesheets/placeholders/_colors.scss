@@ -1,0 +1,9 @@
+@use 'abstracts/variables' as v;
+
+%heading-color {
+    color: v.$heading-color;
+}
+
+%text-color {
+    color: v.$text-color;
+}
