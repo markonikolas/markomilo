@@ -15,6 +15,10 @@ if ( ! empty( $categories ) ) {
 
 $next_post = get_next_post();
 
+if ( ! $next_post ) {
+	$next_post = get_post( custom_posttype_get_adjacent_id( 'prev', 'poem', get_the_ID() ) );
+}
+
 ?>
 
 <?php get_header(); ?>
@@ -45,7 +49,10 @@ $next_post = get_next_post();
 
 		<section class="post-next">
 			<h3 class="post-meta__title post-meta__title--lg"><?php esc_html_e( 'Next:', 'markomilo' ); ?></h3> 
-			<a class="link post-meta__text post-meta__link post-meta__text--lg" href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>"><?php echo esc_html( get_the_title( $next_post->ID ) ); ?></a>
+			<a class="link post-meta__text post-meta__link post-meta__text--lg" 
+				href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>">
+				<?php echo esc_html( get_the_title( $next_post->ID ) ); ?>
+			</a>
 		</section>
 	</article>
 </main>

@@ -32,7 +32,6 @@ require_once get_theme_file_path( '/includes/navigation.php' );
  */
 require_once get_theme_file_path( '/includes/cpt.php' );
 
-
 /**
  * Add scripts and styles to the theme.
  */
@@ -42,3 +41,8 @@ require_once get_theme_file_path( '/includes/enqueue.php' );
  * Add navigation walker.
  */
 require_once get_theme_file_path( '/includes/walker.php' );
+
+/**
+ * Add utilities.
+ */
+require_once get_theme_file_path( '/includes/utils.php' );
