@@ -3,8 +3,25 @@
 %link {
     font-size: 70px;
     line-height: 160%;
+    transform-origin: bottom left;
+    transition: color 350ms ease, transform 350ms ease;
+
+    &::before {
+        content: '—';
+        position: absolute;
+        transition: opacity 350ms ease, transform 350ms ease;
+        transform: translateX(-25px);
+        opacity: 0;
+        left: -85px;
+    }
 
     &:hover {
         color: v.$brand-color;
+        transform: skewX(-15deg) translateX(-7px);
+
+        &::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 }

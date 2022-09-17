@@ -39,6 +39,6 @@ function enqueue_assets() {
 		true
 	);
 
-	wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Lora&display=swap', array(), 1.0 );
+	wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap', array(), 1.0 );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );

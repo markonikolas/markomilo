@@ -8,6 +8,7 @@
         &__title {
             font-size: 17px;
             line-height: 22px;
+            font-style: italic;
 
             @extend %heading-color;
 
@@ -24,7 +25,7 @@
 
             &--lg {
                 font-size: 70px;
-                line-height: 80px;
+                line-height: 81px;
             }
         }
 
@@ -42,6 +43,10 @@
 
         * {
             margin: 0;
+        }
+
+        &__link {
+            @extend %link;
         }
     }
 }

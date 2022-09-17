@@ -3,14 +3,24 @@
     margin: 0;
 
     &-item {
-        padding: 1rem;
         font: normal 400 24px/28px $heading-font-stack;
         color: $primary-color;
         list-style: none;
+
+        @extend %link;
+
+        &__link {
+            display: block;
+            padding: 1rem;
+        }
     }
 }
 
 .current-menu-item {
     color: $brand-color;
     font-style: italic;
+
+    &:hover {
+        transform: none;
+    }
 }

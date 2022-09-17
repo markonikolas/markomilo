@@ -41,6 +41,11 @@ figure {
 a {
     color: inherit;
     text-decoration: none;
+    transition: color 350ms ease;
+
+    &:hover {
+        color: $brand-color;
+    }
 }
 
 p,

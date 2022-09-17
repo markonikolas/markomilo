@@ -15,27 +15,8 @@
     &__link {
         position: relative;
         font: normal 400 70px/160% $heading-font-stack;
-        transition: color 350ms ease, transform 350ms ease;
-        transform-origin: bottom left;
 
-        &::before {
-            content: '—';
-            position: absolute;
-            transition: opacity 350ms ease, transform 350ms ease;
-            transform: translateX(-25px);
-            opacity: 0;
-            left: -85px;
-        }
-
-        &:hover {
-            color: $brand-color;
-            transform: skewX(-15deg) translateX(-7px);
-
-            &::before {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+        @extend %link;
     }
 
     &__list {
