@@ -2,8 +2,6 @@
     display: grid;
     place-items: center;
 
-    @extend %body-height;
-
     &__content {
         display: flex;
         flex-direction: column;
