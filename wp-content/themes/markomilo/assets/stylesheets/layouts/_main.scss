@@ -11,10 +11,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 1rem;
-        padding-right: 120px;
+        padding: 40px 40px 0 20px;
         transition: padding 500ms ease-out;
         transition-delay: 250ms;
+
+        @include breakpoint(768) {
+            padding-top: 1rem;
+            padding-right: 120px;
+        }
 
         @include breakpoint(1300) {
             gap: 2rem;
@@ -24,7 +28,8 @@
 
     &__link {
         position: relative;
-        font: normal 400 35px/220% $heading-font-stack;
+        font: normal 400 35px/1.2 $heading-font-stack;
+        text-align: right;
 
         @extend %link;
 
@@ -40,7 +45,11 @@
     }
 
     &__list {
-        gap: 0;
+        gap: 2.5rem;
         align-items: flex-end;
+
+        @include breakpoint(600) {
+            gap: 0;
+        }
     }
 }
