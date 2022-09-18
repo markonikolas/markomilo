@@ -23,11 +23,11 @@ namespace MarkoMilo;
 			'order'          => 'ASC',
 		);
 
-		$poem_query = new \WP_Query( $args );
+		$query = new \WP_Query( $args );
 
-		if ( $poem_query->have_posts() ) :
-			while ( $poem_query->have_posts() ) :
-				$poem_query->the_post();
+		if ( $query->have_posts() ) :
+			while ( $query->have_posts() ) :
+				$query->the_post();
 
 				?>
 				<a class="main__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
