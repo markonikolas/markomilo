@@ -4,10 +4,12 @@
     left: 0;
     display: flex;
     width: 100%;
+    background-color: $white-color;
 
     @include breakpoint(600) {
         position: fixed;
         width: 250px;
+        background-color: unset;
     }
 
     .admin-bar & {

@@ -1,11 +1,23 @@
 h1 {
-    font: normal 400 100px/115px $heading-font-stack;
+    font: normal 400 60px/69px $heading-font-stack;
+
     @extend %heading-color;
+
+    @include breakpoint(600) {
+        font-size: 100px;
+        line-height: 115px;
+    }
 }
 
 h2 {
-    font: normal 400 25px/33px $text-font-stack;
+    font: normal 400 20px/33px $text-font-stack;
+
     @extend %text-color;
+
+    @include breakpoint(600) {
+        font-size: 25px;
+        line-height: 33px;
+    }
 }
 
 h3,
@@ -21,6 +33,12 @@ h5,
 h6,
 p,
 span {
-    font: normal 400 20px/180% $text-font-stack;
+    font: normal 400 17px/170% $text-font-stack;
+
     @extend %text-color;
+
+    @include breakpoint(600) {
+        font-size: 20px;
+        line-height: 180%;
+    }
 }

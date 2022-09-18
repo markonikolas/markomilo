@@ -3,10 +3,13 @@
         place-items: center;
 
         &__content {
-            margin-top: 8rem;
-            padding: 4rem 3rem;
             transition: margin 500ms ease-out;
             transition-delay: 250ms;
+
+            @include breakpoint(600) {
+                margin-top: 8rem;
+                padding: 4rem 3rem;
+            }
 
             @media screen and (orientation: landscape) {
                 margin-top: 2rem;
