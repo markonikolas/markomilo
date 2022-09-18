@@ -9,16 +9,6 @@
 namespace MarkoMilo;
 
 /**
- * Remove Gutenberg Block Library CSS from loading on the frontend
- */
-function smartwp_remove_wp_block_library_css() {
-	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'wp-block-library-theme' );
-	wp_dequeue_style( 'wc-blocks-style' );
-}
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\smartwp_remove_wp_block_library_css', 100 );
-
-/**
  * Remove WordPress block library
  */
 function remove_wp_block_library_css() {
@@ -27,6 +17,15 @@ function remove_wp_block_library_css() {
 	wp_dequeue_style( 'wc-block-style' );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_wp_block_library_css', 100 );
+
+/**
+ * Disable all colors within Gutenberg.
+ */
+function disable_gutenberg_all_colors() {
+	add_theme_support( 'editor-color-palette' );
+	add_theme_support( 'disable-custom-colors' );
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\disable_gutenberg_all_colors', 99 );
 
 /**
  * Remove WordPress jQuery Migrate
