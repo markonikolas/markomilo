@@ -7,7 +7,7 @@
     background-color: $white-color;
     z-index: 9;
 
-    @include breakpoint(900) {
+    @include breakpoint(800) {
         position: fixed;
         width: 250px;
         background-color: unset;

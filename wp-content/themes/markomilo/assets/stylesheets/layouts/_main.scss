@@ -27,7 +27,7 @@
         user-select: none;
 
         .mobile & {
-            padding: 5rem 0;
+            padding: 0;
             height: auto;
         }
     }
@@ -36,7 +36,7 @@
         flex: none;
 
         @include breakpoint(800) {
-            margin-right: 2rem;
+            margin-right: 10px;
         }
 
         @include breakpoint(1200) {
@@ -47,6 +47,21 @@
 
         &-inner {
             @extend %link;
+
+            font-size: 35px;
+            line-height: 210%;
+            padding-right: 40px;
+
+            @include breakpoint(600) {
+                line-height: 125%;
+                padding: 1vh 60px;
+                font-size: 6.5vh;
+            }
+
+            @media screen and (orientation: landscape) {
+                font-size: 70px;
+                line-height: 125%;
+            }
         }
     }
 }
