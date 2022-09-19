@@ -11,7 +11,7 @@ namespace MarkoMilo;
 
 <?php get_header(); ?>
 
-<main class="main">
+<main class="main" data-barba="container" data-barba-namespace="<?php the_title(); ?>">
 
 	<article class="main-content">
 		<?php the_content(); ?>

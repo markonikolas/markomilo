@@ -12,7 +12,7 @@ namespace MarkoMilo;
 
 <?php get_header(); ?>
 
-	<nav class="main main-navigation">
+	<nav class="main main-navigation" data-barba="container" data-barba-namespace="Works">
 
 		<?php
 

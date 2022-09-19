@@ -25,7 +25,7 @@ if ( ! $next_post ) {
 
 <?php get_header(); ?>
 
-<main class="main">
+<main class="main" data-barba="container" data-barba-namespace="Works">
 
 	<article class="post main-content">
 		<h1><?php the_title(); ?></h1>

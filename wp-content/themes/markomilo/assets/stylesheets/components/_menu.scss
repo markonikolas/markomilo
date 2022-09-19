@@ -13,6 +13,11 @@
         font: normal 400 24px/28px $heading-font-stack;
         color: $primary-color;
         list-style: none;
+        transition: color 350ms ease, transform 350ms ease;
+
+        &:hover {
+            transform: skewX(-15deg);
+        }
 
         &__link {
             display: block;
@@ -27,9 +32,11 @@
 
 .current-menu-item {
     color: $brand-color;
-    font-style: italic;
+    transform: skewX(-15deg);
 
-    &:hover {
-        transform: none;
+    .menu-item__link {
+        &:hover {
+            transform: none;
+        }
     }
 }

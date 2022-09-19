@@ -23,6 +23,22 @@ add_action( 'wp_head', __NAMESPACE__ . '\preconnect_fonts' );
  */
 function enqueue_assets() {
 
+	wp_enqueue_script(
+		'barba',
+		'https://unpkg.com/@barba/core',
+		array(),
+		'1.0',
+		false
+	);
+
+	wp_enqueue_script(
+		'gsap',
+		'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js',
+		array(),
+		'1.0',
+		false
+	);
+
 	wp_enqueue_style(
 		'theme-main',
 		get_theme_file_uri( '/dist/css/style.css' ),

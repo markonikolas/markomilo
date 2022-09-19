@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</script>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-barba="wrapper">
 <?php wp_body_open(); ?>
 
 <header class="header">
