@@ -1,9 +1,14 @@
 .post {
     &-meta {
         display: flex;
-        gap: 4rem;
+        flex-direction: column;
         width: 100%;
-        margin-top: 3rem;
+
+        @include breakpoint(600) {
+            flex-direction: unset;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
 
         @extend %max-content-width;
 
@@ -11,6 +16,11 @@
             font-size: 17px;
             line-height: 22px;
             font-style: italic;
+            margin-bottom: 0.5rem;
+
+            @include breakpoint(600) {
+                margin-top: unset;
+            }
 
             @extend %heading-color;
 
@@ -22,6 +32,11 @@
         &__text {
             font-size: 20px;
             line-height: 26px;
+            margin-top: 0;
+
+            @include breakpoint(600) {
+                margin-top: unset;
+            }
 
             @extend %heading-color;
 
@@ -51,6 +66,7 @@
 
         &__link {
             @extend %link;
+            
         }
     }
 }

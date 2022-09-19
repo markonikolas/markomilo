@@ -15,6 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-</body>
+</body>	
 
 <?php wp_footer(); ?>

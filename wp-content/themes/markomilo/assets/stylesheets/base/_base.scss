@@ -3,10 +3,6 @@
  */
 html {
     box-sizing: border-box;
-}
-
-html,
-body {
     height: 100%;
 }
 
@@ -20,6 +16,11 @@ body {
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 main {
@@ -40,6 +41,7 @@ img {
 }
 
 figure {
+    display: flex;
     margin: 0;
 }
 
@@ -59,6 +61,16 @@ hr {
 }
 
 hr {
+    margin-block: 20px;
     width: 100%;
     opacity: 0.4;
+}
+
+blockquote {
+    margin: 0;
+    font-style: italic;
+
+    p {
+        font-style: italic;
+    }
 }

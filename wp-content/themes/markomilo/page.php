@@ -13,7 +13,7 @@ namespace MarkoMilo;
 
 <main class="main">
 
-	<article class="main__content">
+	<article class="main-content">
 		<?php the_content(); ?>
 	</article>
 </main>

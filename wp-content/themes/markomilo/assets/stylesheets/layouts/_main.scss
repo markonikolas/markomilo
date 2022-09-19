@@ -1,55 +1,61 @@
 .main {
     display: grid;
-    justify-items: end;
+    justify-items: center;
     align-items: center;
+    position: relative;
 
-    @include breakpoint(1300) {
+    @include breakpoint(600) {
         place-items: center;
     }
 
-    &__content {
+    &-navigation {
+        width: 100vw;
+        height: 100vh;
+        padding-top: 3rem;
+        position: relative;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar in FF */
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 40px 40px 0 20px;
-        transition: padding 500ms ease-out;
-        transition-delay: 250ms;
+        align-items: flex-end;
+        text-align: right;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
 
-        @include breakpoint(768) {
-            padding-top: 1rem;
-            padding-right: 120px;
-        }
-
-        @include breakpoint(1300) {
-            gap: 2rem;
-            padding: 4rem 3rem;
+        .mobile & {
+            padding: 5rem 0;
+            height: auto;
         }
     }
 
     &__link {
-        position: relative;
-        font: normal 400 35px/1.2 $heading-font-stack;
-        text-align: right;
+        flex: none;
 
-        @extend %link;
-
-        @include breakpoint(600) {
-            font-size: 55px;
-            line-height: 200%;
+        @include breakpoint(800) {
+            margin-right: 2rem;
         }
 
-        @include breakpoint(768) {
-            font-size: 70px;
-            line-height: 160%;
+        @include breakpoint(1200) {
+            padding: 0 2rem 0 0;
+            margin-right: 4rem;
+            margin-right: 25vw;
         }
-    }
 
-    &__list {
-        gap: 2.5rem;
-        align-items: flex-end;
-
-        @include breakpoint(600) {
-            gap: 0;
+        &-inner {
+            @extend %link;
         }
     }
+}
+
+.js body.page-template-poetry:not(.mobile) {
+    height: 100%;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

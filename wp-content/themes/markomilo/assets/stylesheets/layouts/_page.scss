@@ -1,8 +1,12 @@
 .page-template-default {
+
     .main {
         place-items: center;
 
-        &__content {
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             transition: margin 500ms ease-out;
             transition-delay: 250ms;
 

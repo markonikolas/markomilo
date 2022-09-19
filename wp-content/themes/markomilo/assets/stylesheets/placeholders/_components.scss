@@ -1,27 +1,52 @@
 @use 'abstracts/variables' as v;
+@use 'abstracts/mixins' as *;
 
 %link {
-    font-size: 70px;
-    line-height: 160%;
     transform-origin: bottom left;
     transition: color 350ms ease, transform 350ms ease, font-size 500ms ease-out;
+    font-family: 'Times Now', serif;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    font-size: 7vw;
+    padding: 0.5rem;
+    display: block;
+    color: v.$text-color;
+    transition: transform 0.2s, color 0.2s;
 
-    &::before {
-        content: '—';
-        position: absolute;
-        transition: opacity 350ms ease, transform 350ms ease;
-        transform: translateX(-25px);
-        opacity: 0;
-        left: -85px;
+    @include breakpoint(768) {
+        padding: 1vh 0;
+        font-size: 9.5vh;
     }
 
     &:hover {
+        font-style: italic;
+        transform: translate3d(2rem, 0, 0);
         color: v.$brand-color;
-        transform: skewX(-15deg) translateX(-7px);
 
         &::before {
             opacity: 1;
-            transform: translateX(0);
         }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -5.5rem;
+            right: 0;
+            height: 100%;
+        }
+    }
+
+    &::before {
+        content: '';
+        top: 55%;
+        width: 3.5rem;
+        height: 1px;
+        background: currentColor;
+        position: absolute;
+        right: calc(100% + 2rem);
+        opacity: 0;
+        pointer-events: none;
     }
 }

@@ -10,9 +10,9 @@ namespace MarkoMilo;
 $terms = get_the_terms( $post, 'type' );
 
 if ( ! empty( $terms ) ) {
-	$custom_term = '<p class="post-meta__text">' . esc_html( $terms[0]->name ) . '</p>';
+	$term_name = $terms[0]->name;
 } else {
-	$custom_term = 'Uncategorized';
+	$term_name = 'Uncategorized';
 }
 
 $next_post = get_next_post();
@@ -29,6 +29,7 @@ if ( ! $next_post ) {
 
 	<article class="post main__content">
 		<h1><?php the_title(); ?></h1>
+
 		<?php the_content(); ?>
 
 		<section class="post-meta">
@@ -39,7 +40,7 @@ if ( ! $next_post ) {
 
 			<div>
 				<h3 class="post-meta__title"><?php esc_html_e( 'Category:', 'markomilo' ); ?></h3>
-                <p class="post-meta__text"><?php echo $custom_term; // @phpcs:ignore ?></p>
+                <p class="post-meta__text"><?php echo $term_name; // @phpcs:ignore ?></p>
 			</div>
 
 			<div>

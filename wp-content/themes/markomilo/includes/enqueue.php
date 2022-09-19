@@ -39,6 +39,36 @@ function enqueue_assets() {
 		true
 	);
 
+	wp_enqueue_script(
+		'infinite-menu',
+		get_theme_file_uri( '/dist/js/infiniteMenu.js' ),
+		array( 'jquery' ),
+		fileatime( get_stylesheet_directory() . '/dist/js/infiniteMenu.js' ),
+		true
+	);
+
 	wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap', array(), 1.0 );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
+
+/**
+ * Enqueue scripts as type="module".
+ *
+ * Resolves the issue of import declarations may only appear at top level of a module.
+ *
+ * @see https://stackoverflow.com/questions/42237388/syntaxerror-import-declarations-may-only-appear-at-top-level-of-a-module
+ *
+ * @param string $tag - script to enqueue.
+ * @param string $handle - scripts id.
+ * @param string $src - scripts source.
+ */
+function add_type_attribute( $tag, $handle, $src ) {
+	if ( 'infinite-menu' === $handle ) {
+		return '<script id="infinite-menu-js" type="module" src="' . esc_url( $src ) . '"></script>'; // @phpcs:ignore
+	} elseif ( 'theme-main' === $handle ) {
+		return '<script id="main-js" type="module" src="' . esc_url( $src ) . '"></script>'; // @phpcs:ignore
+	}
+
+	return $tag;
+}
+add_filter( 'script_loader_tag', __NAMESPACE__ . '\add_type_attribute', 10, 3 );

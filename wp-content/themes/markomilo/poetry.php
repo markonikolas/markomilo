@@ -12,9 +12,8 @@ namespace MarkoMilo;
 
 <?php get_header(); ?>
 
-<main class="main">
+	<nav class="main main-navigation">
 
-	<section class="main__content main__list">
 		<?php
 
 		$args = array(
@@ -30,10 +29,9 @@ namespace MarkoMilo;
 				$query->the_post();
 
 				?>
-				<a class="main__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<div class="main__link"><a class="main__link-inner" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 			<?php endwhile; ?>
 		<?php endif; ?>
-	</section>
-</main>
+	</nav>
 
 <?php get_footer(); ?>
