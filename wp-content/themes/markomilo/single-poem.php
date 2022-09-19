@@ -27,7 +27,7 @@ if ( ! $next_post ) {
 
 <main class="main">
 
-	<article class="post main__content">
+	<article class="post main-content">
 		<h1><?php the_title(); ?></h1>
 
 		<?php the_content(); ?>

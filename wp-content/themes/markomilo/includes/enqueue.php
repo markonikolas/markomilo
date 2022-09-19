@@ -2,10 +2,10 @@
 /**
  * Theme enqueues live here
  *
- * @package lypheclinic
+ * @package markomilo
  */
 
-namespace Lypheclinic;
+namespace MarkoMilo;
 
 /**
  * Enqueue google fonts
@@ -34,18 +34,20 @@ function enqueue_assets() {
 	wp_enqueue_script(
 		'theme-main',
 		get_theme_file_uri( '/dist/js/main.js' ),
-		array(),
+		array( 'jquery' ),
 		fileatime( get_stylesheet_directory() . '/dist/js/main.js' ),
 		true
 	);
 
-	wp_enqueue_script(
-		'infinite-menu',
-		get_theme_file_uri( '/dist/js/infiniteMenu.js' ),
-		array( 'jquery' ),
-		fileatime( get_stylesheet_directory() . '/dist/js/infiniteMenu.js' ),
-		true
-	);
+	if ( is_page_template( 'poetry.php' ) ) {
+		wp_enqueue_script(
+			'infinite-menu',
+			get_theme_file_uri( '/dist/js/infiniteMenu.js' ),
+			array( 'jquery' ),
+			fileatime( get_stylesheet_directory() . '/dist/js/infiniteMenu.js' ),
+			true
+		);
+	}
 
 	wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap', array(), 1.0 );
 }

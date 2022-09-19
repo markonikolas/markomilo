@@ -1,7 +1,8 @@
-.page-template-default {
-
+.page-template-default,
+.poem-template-default {
     .main {
-        place-items: center;
+        display: block;
+        padding: 40px 20px;
 
         &-content {
             display: flex;
