@@ -1,24 +1,8 @@
 .page-template-default,
 .poem-template-default {
     .main {
-        display: block;
-        padding: 40px 20px;
+        
 
-        &-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: margin 500ms ease-out;
-            transition-delay: 250ms;
-
-            @include breakpoint(600) {
-                margin-top: 8rem;
-                padding: 4rem 3rem;
-            }
-
-            @media screen and (orientation: landscape) {
-                margin-top: 2rem;
-            }
-        }
+      
     }
 }

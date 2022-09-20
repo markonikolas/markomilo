@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @use 'abstracts' as *;
-@use 'placeholders' as *;
 
-@import 'vendors', 'utils', 'base', 'components', 'layouts';
+@import 'vendors';
+
+@import 'placeholders', 'utils', 'base', 'components', 'layouts';

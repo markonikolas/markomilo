@@ -1,9 +1,8 @@
 .main {
-    display: grid;
-    justify-items: center;
-    align-items: center;
     position: relative;
+    display: block;
     height: 100%;
+    padding: 40px 20px;
 
     @include breakpoint(600) {
         place-items: center;
@@ -12,6 +11,23 @@
     img {
         width: 100%;
         margin-inline: 20px;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: margin 500ms ease-out;
+        transition-delay: 250ms;
+
+        @include breakpoint(600) {
+            margin-top: 8rem;
+            padding: 4rem 3rem;
+        }
+
+        @media screen and (orientation: landscape) {
+            margin-top: 2rem;
+        }
     }
 
     &-navigation {
