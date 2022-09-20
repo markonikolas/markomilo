@@ -1,0 +1,17 @@
+body {
+    &.transition {
+        overflow-y: hidden;
+
+        .menu-item {
+            &:not(.current-menu-item) {
+                .menu-item__link {
+                    color: white;
+                }
+            }
+
+            &.current-menu-item {
+                color: lighten($brand-color, 20%);
+            }
+        }
+    }
+}

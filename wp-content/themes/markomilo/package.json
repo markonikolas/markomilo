@@ -3,29 +3,25 @@
   "version": "0.0.1",
   "description": "Marko Milo, a personal website.",
   "main": "main.js",
-  "type": "module",
   "scripts": {
-    "start": "gulp dev",
-    "prod": "gulp build"
+    "start": "mix watch --hot",
+    "build": "mix build",
+    "prod": "mix build --production"
   },
   "author": "Marko Nikolaš",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.18.5",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/register": "^7.17.7",
     "browser-sync": "^2.27.10",
-    "del": "^6.1.1",
-    "es6-promise": "^4.2.8",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-copy": "^4.0.1",
-    "gulp-css-purge": "^3.0.9",
-    "gulp-eslint": "^6.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2",
-    "sass": "^1.53.0"
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.54.9",
+    "sass-loader": "^12.6.0",
+    "ts-loader": "^9.4.0",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "gsap": "^3.11.1"
   }
 }

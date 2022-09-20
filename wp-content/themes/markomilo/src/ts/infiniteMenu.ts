@@ -1,9 +1,23 @@
 const winsize = { width: window.innerWidth, height: window.innerHeight };
 
+interface INavigationMenu {
+    el: any,
+    menuItems?: any
+}
+
 export default class InfiniteMenu {
-    constructor(el) {
+    public DOM: INavigationMenu;
+    public clonesHeight: number;
+    public scrollHeight: number;
+    public scrollPos: number;
+
+    constructor(el: Element) {
         this.DOM = { el: el };
         this.DOM.menuItems = [...this.DOM.el.querySelectorAll('.main__link')];
+
+        this.clonesHeight = 0;
+        this.scrollHeight = 0;
+        this.scrollPos = 0;
 
         this.cloneItems();
         this.initScroll();
@@ -13,13 +27,14 @@ export default class InfiniteMenu {
         // rAF/loop
         requestAnimationFrame(() => this.render());
     }
+
     getScrollPos() {
         return (
             (this.DOM.el.pageYOffset || this.DOM.el.scrollTop) -
             (this.DOM.el.clientTop || 0)
         );
     }
-    setScrollPos(pos) {
+    setScrollPos(pos: number) {
         this.DOM.el.scrollTop = pos;
     }
     // Create menu items clones and append them to the menu items list
@@ -34,13 +49,13 @@ export default class InfiniteMenu {
         // Remove any
         this.DOM.el
             .querySelectorAll('.loop__clone')
-            .forEach((clone) => this.DOM.el.removeChild(clone));
+            .forEach((clone: Element) => this.DOM.el.removeChild(clone));
         // Add clones
         let totalClones = 0;
         this.DOM.menuItems
-            .filter((_, index) => index < fitIn)
-            .map((target) => {
-                const clone = target.cloneNode(true);
+            .filter((_: Element, index: number) => index < fitIn)
+            .map((target: Element) => {
+                const clone = target.cloneNode(true) as HTMLElement;
                 clone.classList.add('loop__clone');
                 this.DOM.el.appendChild(clone);
                 ++totalClones;

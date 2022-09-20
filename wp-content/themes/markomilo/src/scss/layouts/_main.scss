@@ -3,6 +3,7 @@
     justify-items: center;
     align-items: center;
     position: relative;
+    height: 100%;
 
     @include breakpoint(600) {
         place-items: center;
