@@ -4,7 +4,7 @@
   "description": "Marko Milo, a personal website.",
   "main": "main.js",
   "scripts": {
-    "start": "mix watch --hot",
+    "start": "mix watch",
     "build": "mix build",
     "prod": "mix build --production"
   },
