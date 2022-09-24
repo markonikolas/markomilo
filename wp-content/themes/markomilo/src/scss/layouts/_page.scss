@@ -1,8 +1,7 @@
-.page-template-default,
-.poem-template-default {
+.page-template-default {
     .main {
-        
-
-      
+        &-content {
+            align-items: center;
+        }
     }
 }

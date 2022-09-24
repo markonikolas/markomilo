@@ -1,8 +1,13 @@
 const winsize = { width: window.innerWidth, height: window.innerHeight };
 
 interface INavigationMenu {
-    el: any,
-    menuItems?: any
+    /**
+     * Disabled type check here, 3rd party code.
+     */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    el: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    menuItems?: any;
 }
 
 export default class InfiniteMenu {
