@@ -2,7 +2,17 @@
     position: relative;
     display: block;
     height: 100%;
-    padding: 40px 20px;
+    padding: 40px 20px 10px;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 
     @include breakpoint(600) {
         place-items: center;
@@ -22,19 +32,19 @@
 
         @include breakpoint(600) {
             align-items: center;
-            margin-top: 8rem;
-            padding: 4rem 3rem;
+            margin-top: 5.5rem;
+            padding: 4rem 3rem 2rem;
         }
 
         @media screen and (orientation: landscape) {
-            margin-top: 2rem;
+            margin-top: 0;
         }
     }
 
     &-navigation {
         width: 100vw;
         height: 100vh;
-        padding-top: 3rem;
+        padding: 0;
         position: relative;
         overflow: auto;
         -webkit-overflow-scrolling: touch;
@@ -77,7 +87,6 @@
 
             @include breakpoint(600) {
                 line-height: 125%;
-                padding: 1vh 60px;
                 font-size: 6.5vh;
             }
 

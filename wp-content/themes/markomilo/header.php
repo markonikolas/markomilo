@@ -42,3 +42,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 	?>
 </header>
+
+<?php
+	do_action( 'curtain' );

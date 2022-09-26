@@ -14,8 +14,6 @@
     }
 
     .admin-bar & {
-        top: 46px;
-
         @include breakpoint(768) {
             top: 32px;
         }

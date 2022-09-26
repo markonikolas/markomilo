@@ -3,10 +3,10 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        gap: 40px 50px;
 
         @include breakpoint(600) {
             flex-direction: unset;
-            gap: 4rem;
             margin-top: 3rem;
         }
 
@@ -32,11 +32,7 @@
         &__text {
             font-size: 20px;
             line-height: 26px;
-            margin-top: 0;
-
-            @include breakpoint(600) {
-                margin-top: unset;
-            }
+            margin-block: 0;
 
             @extend %heading-color;
 
@@ -66,6 +62,8 @@
 
         &__link {
             @extend %link;
+
+            font-family: 'Times Now', sans-serif !important;
         }
     }
 }

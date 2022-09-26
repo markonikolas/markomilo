@@ -14,7 +14,6 @@ namespace MarkoMilo;
 
 	<main class="main main-navigation" data-barba="container" data-barba-namespace="Works">
 		<?php
-
 		$args = array(
 			'post_type'      => 'poem',
 			'posts_per_page' => -1,

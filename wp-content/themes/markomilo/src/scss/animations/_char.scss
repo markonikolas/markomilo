@@ -1,0 +1,12 @@
+.char {
+    display: inline-flex;
+    transform: translateY(120%);
+    font-size: 4rem;
+    font-family: 'Times Now', sans-serif;
+    color: $white-color;
+    line-height: 1;
+
+    @include breakpoint(600) {
+        font-size: 100px;
+    }
+}

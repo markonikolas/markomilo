@@ -4,7 +4,9 @@ const themePath = '.';
 
 mix.setPublicPath('assets');
 
-mix.ts('src/ts/main.ts', 'js').sass('src/scss/style.scss', 'css');
+mix.ts('src/ts/main.ts', 'js')
+    .sass('src/scss/style.scss', 'css')
+    .options({ processCssUrls: false });
 
 mix.browserSync({
     proxy: 'http://markomilo.local',

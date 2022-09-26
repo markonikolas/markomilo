@@ -1,0 +1,55 @@
+.animation {
+    opacity: 0;
+    display: none;
+    transition: opacity 350ms ease;
+    filter: saturate(0.5);
+
+    &.visible {
+        opacity: 1;
+    }
+}
+
+.animation-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+
+    &.visible {
+        z-index: 999;
+    }
+}
+
+.animation-text-wrapper {
+    overflow: hidden;
+}
+
+.animation-text {
+    position: relative;
+    z-index: 9999;
+    display: block;
+    opacity: 0;
+    font-family: 'Times Now', sans-serif;
+
+    .char {
+        display: inline-flex;
+        transform: translateY(120%);
+        color: $white-color;
+        line-height: 1;
+    }
+
+    .empty {
+        margin-inline: 0.5rem;
+    }
+
+    &--page {
+        overflow: hidden;
+
+        .char {
+            color: $primary-color;
+        }
+    }
+}

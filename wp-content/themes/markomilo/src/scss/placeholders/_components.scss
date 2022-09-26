@@ -11,7 +11,7 @@
     padding: 0.5rem;
     display: block;
     color: v.$text-color;
-    transition: transform 0.2s, color 0.2s;
+    transition: transform 0.2s;
 
     @include breakpoint(768) {
         padding: 1vh 0;
@@ -34,6 +34,15 @@
             left: -5.5rem;
             right: 0;
             height: 100%;
+        }
+
+        @include breakpoint(768, max) {
+            transform: unset;
+
+            &::before,
+            &::after {
+                display: none;
+            }
         }
     }
 

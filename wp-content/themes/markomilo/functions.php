@@ -46,3 +46,8 @@ require_once get_theme_file_path( '/includes/walker.php' );
  * Add utilities.
  */
 require_once get_theme_file_path( '/includes/utils.php' );
+
+/**
+ * Add hooks.
+ */
+require_once get_theme_file_path( '/includes/hooks.php' );
