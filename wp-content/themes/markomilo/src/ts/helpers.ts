@@ -14,7 +14,6 @@ export const splitTextToNodes = (title: Element | null) => {
 
         el.classList.add('char');
 
-        console.log(char);
         if (char === ' ') {
             el.classList.add('empty');
         }

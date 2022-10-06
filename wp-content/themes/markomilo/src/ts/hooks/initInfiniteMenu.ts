@@ -9,10 +9,7 @@ const infiniteMenu = (data: IHookData) => {
 
     if (currentNamespace === 'Works' && navigation) {
         new InfiniteMenu(navigation);
-        console.log('init');
     }
-
-    console.log('trigger');
 };
 
 export default infiniteMenu;

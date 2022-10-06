@@ -8,7 +8,6 @@ const config = {
     },
     transitions: [defaultTransition],
     views: [works],
-    preventRunning: true,
 };
 
 export default config;
