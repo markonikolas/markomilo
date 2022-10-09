@@ -12,7 +12,7 @@ const timeline = gsap.timeline();
 const defaultTransition = {
     name: 'default-transition',
 
-    async once(data: ITransitionData) {
+    once: async (data: ITransitionData) => {
         if (data.next.namespace === 'Works') {
             return transitionOnce(timeline);
         }
@@ -20,13 +20,13 @@ const defaultTransition = {
 
     before: async () => transitionBefore(timeline),
 
-    async beforeEnter(data: ITransitionData) {
+    beforeEnter: async (data: ITransitionData) => {
         const title = data.next.container.querySelector('.main h1');
         title?.classList.add('animation-text', 'animation-text--page');
         splitTextToNodes(title);
     },
 
-    enter() {
+    enter: async () => {
         window.scrollTo({ top: 0 });
     },
 

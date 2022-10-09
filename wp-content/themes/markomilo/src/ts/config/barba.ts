@@ -1,4 +1,5 @@
 import defaultTransition from '../transitions/default';
+import prevent from '../transitions/prevent';
 import works from '../views/works';
 
 const config = {
@@ -8,6 +9,7 @@ const config = {
     },
     transitions: [defaultTransition],
     views: [works],
+    prevent,
 };
 
 export default config;

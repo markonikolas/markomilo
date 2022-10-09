@@ -25,7 +25,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _transitions_default__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../transitions/default */ "./src/ts/transitions/default.ts");
-/* harmony import */ var _views_works__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/works */ "./src/ts/views/works.ts");
+/* harmony import */ var _transitions_prevent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../transitions/prevent */ "./src/ts/transitions/prevent.ts");
+/* harmony import */ var _views_works__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/works */ "./src/ts/views/works.ts");
+
 
 
 var config = {
@@ -34,7 +36,8 @@ var config = {
     wrapper: 'wrapper'
   },
   transitions: [_transitions_default__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  views: [_views_works__WEBPACK_IMPORTED_MODULE_1__["default"]]
+  views: [_views_works__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  prevent: _transitions_prevent__WEBPACK_IMPORTED_MODULE_1__["default"]
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (config);
 
@@ -653,7 +656,7 @@ var timeline = gsap__WEBPACK_IMPORTED_MODULE_4__["default"].timeline();
 var defaultTransition = {
   name: 'default-transition',
   once: function once(data) {
-    return __awaiter(this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    return __awaiter(void 0, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -690,7 +693,7 @@ var defaultTransition = {
     }));
   },
   beforeEnter: function beforeEnter(data) {
-    return __awaiter(this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+    return __awaiter(void 0, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
       var title;
       return _regeneratorRuntime().wrap(function _callee3$(_context3) {
         while (1) {
@@ -709,17 +712,14 @@ var defaultTransition = {
     }));
   },
   enter: function enter() {
-    window.scrollTo({
-      top: 0
-    });
-  },
-  after: function after() {
     return __awaiter(void 0, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
       return _regeneratorRuntime().wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
-              return _context4.abrupt("return", (0,_after__WEBPACK_IMPORTED_MODULE_3__["default"])(timeline));
+              window.scrollTo({
+                top: 0
+              });
 
             case 1:
             case "end":
@@ -727,6 +727,22 @@ var defaultTransition = {
           }
         }
       }, _callee4);
+    }));
+  },
+  after: function after() {
+    return __awaiter(void 0, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+      return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              return _context5.abrupt("return", (0,_after__WEBPACK_IMPORTED_MODULE_3__["default"])(timeline));
+
+            case 1:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
     }));
   }
 };
@@ -877,6 +893,26 @@ var transitionOnce = function transitionOnce(timeline) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (transitionOnce);
+
+/***/ }),
+
+/***/ "./src/ts/transitions/prevent.ts":
+/*!***************************************!*\
+  !*** ./src/ts/transitions/prevent.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var prevent = function prevent(_ref) {
+  var el = _ref.el;
+  return el.classList && el.classList.contains('ab-item');
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (prevent);
 
 /***/ }),
 
