@@ -5,7 +5,9 @@
     margin: 0;
 
     @include breakpoint(800) {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         padding-top: 0;
     }
 
@@ -13,10 +15,11 @@
         font: normal 400 24px/28px $heading-font-stack;
         color: $primary-color;
         list-style: none;
-        transition: color 350ms ease, transform 350ms ease;
+        transition: color 350ms ease;
 
         &:hover {
-            transform: skewX(-15deg);
+            font-family: 'Times Now Italic';
+            font-style: italic;
         }
 
         &__link {
@@ -31,8 +34,9 @@
 }
 
 .current-menu-item {
+    font-family: 'Times Now Italic';
+    font-style: italic;
     color: $brand-color;
-    transform: skewX(-15deg);
 
     .menu-item__link {
         &:hover {

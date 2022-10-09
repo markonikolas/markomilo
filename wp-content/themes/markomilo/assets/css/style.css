@@ -623,7 +623,9 @@ body.transition {
 }
 @media (min-width: 800px) {
   .menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding-top: 0;
   }
 }
@@ -631,10 +633,11 @@ body.transition {
   font: normal 400 24px/28px "Times Now", serif;
   color: #000000;
   list-style: none;
-  transition: color 350ms ease, transform 350ms ease;
+  transition: color 350ms ease;
 }
 .menu-item:hover {
-  transform: skewX(-15deg);
+  font-family: "Times Now Italic";
+  font-style: italic;
 }
 .menu-item__link {
   display: block;
@@ -645,8 +648,9 @@ body.transition {
 }
 
 .current-menu-item {
+  font-family: "Times Now Italic";
+  font-style: italic;
   color: #e20000;
-  transform: skewX(-15deg);
 }
 .current-menu-item .menu-item__link:hover {
   transform: none;
