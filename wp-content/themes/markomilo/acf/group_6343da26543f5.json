@@ -1,0 +1,51 @@
+{
+    "key": "group_6343da26543f5",
+    "title": "Page Quote",
+    "fields": [
+        {
+            "key": "field_6343da2726fa6",
+            "label": "Quote value",
+            "name": "quote_value",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit alias et nostrum culpa. Totam officiis voluptas dolor cumque, inventore et assumenda eveniet ullam fuga sint vero odit odio, ipsum quam. Obcaecati fugiat nihil voluptatum omnis nulla natus eum quod labore, animi minus impedit quidem provident! Voluptatem inventore dolorum blanditiis pariatur sequi. Minima eius aliquid voluptatibus velit, rerum tempore consectetur et labore illo corrupti fuga quod nisi natus. Voluptatibus autem, sit aspernatur commodi sequi reprehenderit quo accusamus architecto cupiditate. Debitis, asperiores!",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "poem"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1665394800
+}
