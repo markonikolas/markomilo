@@ -109,6 +109,8 @@ Thumbs.db
 # add your own entries here
 #
 # plugins
+!/wp-content/plugins/advanced-custom-fields
+!/wp-content/plugins/custom-fonts
 
 # themes
 !/wp-content/themes/markomilo
