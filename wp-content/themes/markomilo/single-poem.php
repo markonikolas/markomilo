@@ -30,6 +30,14 @@ if ( ! $next_post ) {
 	<article class="post main-content">
 		<h1><?php the_title(); ?></h1>
 
+		<?php echo get_the_post_thumbnail(); ?>
+
+		<blockquote>
+			— <?php echo esc_html( get_field( 'quote_value' ) ); ?>
+		</blockquote>
+
+		<hr>
+
 		<?php the_content(); ?>
 
 		<section class="post-meta">

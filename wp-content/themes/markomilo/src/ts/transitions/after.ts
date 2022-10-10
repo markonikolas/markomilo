@@ -25,9 +25,9 @@ const transitionAfter = async (timeline: GSAPTimeline) => {
         })
         .to('.animation-text--page .char', {
             y: 0,
-            duration: 1,
+            duration: 0.6,
             stagger: {
-                amount: 0.35,
+                amount: 0.25,
                 from: 'start',
             },
             ease: 'circ.out',

@@ -64,8 +64,9 @@ a {
 }
 
 p,
-hr {
-    max-width: 650px;
+hr,
+blockquote {
+    max-width: 645px;
 }
 
 hr {
@@ -77,6 +78,11 @@ hr {
 blockquote {
     margin: 0;
     font-style: italic;
+    font-family: 'Lora';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    color: $near-black-color;
 
     p {
         font-style: italic;

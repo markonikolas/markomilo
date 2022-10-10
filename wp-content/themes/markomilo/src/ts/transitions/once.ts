@@ -44,10 +44,10 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
         })
         .to('.animation-overlay .animation-text .char', {
             y: 0,
-            duration: 2,
+            duration: 1.25,
             stagger: {
-                amount: 0.35,
-                from: 4,
+                amount: 0.3,
+                from: 'start',
             },
             ease: 'circ.out',
         });

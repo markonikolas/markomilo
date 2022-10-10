@@ -482,8 +482,9 @@ a:hover {
 }
 
 p,
-hr {
-  max-width: 650px;
+hr,
+blockquote {
+  max-width: 645px;
 }
 
 hr {
@@ -495,6 +496,11 @@ hr {
 blockquote {
   margin: 0;
   font-style: italic;
+  font-family: "Lora";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 180%;
+  color: #292a2c;
 }
 blockquote p {
   font-style: italic;
@@ -573,6 +579,9 @@ body.transition {
 .animation-overlay.visible {
   z-index: 999;
 }
+.animation-overlay .animation-text {
+  padding-inline: 1rem;
+}
 
 .animation-text-wrapper {
   overflow: hidden;
@@ -590,6 +599,7 @@ body.transition {
   transform: translateY(120%);
   color: #ffffff;
   line-height: 1;
+  font: normal 400 60px/69px "Times Now", serif;
 }
 .animation-text .empty {
   margin-inline: 0.5rem;
@@ -728,7 +738,7 @@ body.transition {
   display: flex;
   width: 100%;
   background-color: #ffffff;
-  z-index: 9;
+  z-index: 99;
 }
 @media (min-width: 800px) {
   .header {
@@ -784,6 +794,9 @@ body.transition {
     margin-top: 0;
   }
 }
+.main-content h1 {
+  padding-inline: 1rem;
+}
 .main-navigation {
   width: 100vw;
   height: 100vh;
@@ -836,6 +849,23 @@ body.transition {
     font-size: 70px;
     line-height: 125%;
   }
+}
+.main h1 {
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .main h1 {
+    margin-bottom: 100px;
+  }
+}
+.main h1 + img {
+  margin-top: 0;
+}
+.main h1 + p {
+  margin-top: -0.5rem;
+}
+.main img + blockquote {
+  margin-top: 80px;
 }
 
 .js body.page-template-poetry:not(.mobile) {

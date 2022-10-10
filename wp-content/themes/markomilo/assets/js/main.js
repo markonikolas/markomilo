@@ -61,18 +61,19 @@ var splitTextToNodes = function splitTextToNodes(title) {
     return;
   }
 
-  var chars = (_a = title.textContent) === null || _a === void 0 ? void 0 : _a.trim().split('');
+  var chars = (_a = title.innerHTML) === null || _a === void 0 ? void 0 : _a.split(' ');
   var fragment = document.createDocumentFragment();
-  chars === null || chars === void 0 ? void 0 : chars.forEach(function (_char) {
+  chars === null || chars === void 0 ? void 0 : chars.forEach(function (_char, i) {
     var el = document.createElement('span');
-    el.textContent = _char;
-    el.classList.add('char');
+    var spacing = ' ';
 
-    if (_char === ' ') {
-      el.classList.add('empty');
+    if (chars.length - 1 === i) {
+      spacing = '';
     }
 
-    return fragment.append(el);
+    el.innerHTML = _char;
+    el.classList.add('char');
+    return fragment.append(el, spacing);
   });
   title.textContent = '';
   title.appendChild(fragment);
@@ -480,9 +481,9 @@ var transitionAfter = function transitionAfter(timeline) {
               duration: 0
             }).to('.animation-text--page .char', {
               y: 0,
-              duration: 1,
+              duration: 0.6,
               stagger: {
-                amount: 0.35,
+                amount: 0.25,
                 from: 'start'
               },
               ease: 'circ.out'
@@ -846,10 +847,10 @@ var transitionOnce = function transitionOnce(timeline) {
               opacity: 1
             }).to('.animation-overlay .animation-text .char', {
               y: 0,
-              duration: 2,
+              duration: 1.25,
               stagger: {
-                amount: 0.35,
-                from: 4
+                amount: 0.3,
+                from: 'start'
               },
               ease: 'circ.out'
             });

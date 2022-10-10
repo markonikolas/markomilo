@@ -21,6 +21,10 @@
     &.visible {
         z-index: 999;
     }
+
+    .animation-text {
+        padding-inline: 1rem;
+    }
 }
 
 .animation-text-wrapper {
@@ -39,6 +43,7 @@
         transform: translateY(120%);
         color: $white-color;
         line-height: 1;
+        font: normal 400 60px/69px 'Times Now', serif;
     }
 
     .empty {

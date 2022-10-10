@@ -3,22 +3,23 @@ export const splitTextToNodes = (title: Element | null) => {
         return;
     }
 
-    const chars = title.textContent?.trim().split('');
+    const chars = title.innerHTML?.split(' ');
 
     const fragment = document.createDocumentFragment();
 
-    chars?.forEach((char: string) => {
+    chars?.forEach((char: string, i: number) => {
         const el = document.createElement('span');
+        let spacing = ' ';
 
-        el.textContent = char;
+        if (chars.length - 1 === i) {
+            spacing = '';
+        }
+
+        el.innerHTML = char;
 
         el.classList.add('char');
 
-        if (char === ' ') {
-            el.classList.add('empty');
-        }
-
-        return fragment.append(el);
+        return fragment.append(el, spacing);
     });
 
     title.textContent = '';

@@ -55,3 +55,14 @@ function fix_svg() {
           </style>';
 }
 add_action( 'admin_head', __NAMESPACE__ . '\fix_svg' );
+
+/**
+ * Add theme support.
+ */
+function setup() {
+	/**
+	 * Featured image support.
+	 */
+	add_theme_support( 'post-thumbnails' );
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );

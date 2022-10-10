@@ -5,7 +5,7 @@
     display: flex;
     width: 100%;
     background-color: $white-color;
-    z-index: 9;
+    z-index: 99;
 
     @include breakpoint(800) {
         position: fixed;
