@@ -1,4 +1,7 @@
+import gsap from 'gsap';
+
 const transitionAfter = async (timeline: GSAPTimeline) => {
+    const textTimeline = gsap.timeline();
     await timeline
         .to('.animation', {
             display: 'block',
@@ -19,19 +22,27 @@ const transitionAfter = async (timeline: GSAPTimeline) => {
             ease: 'expo.out',
             duration: 0.5,
         })
-        .to('.animation-text--page', {
-            opacity: 1,
-            duration: 0,
-        })
-        .to('.animation-text--page .char', {
-            y: 0,
-            duration: 0.6,
-            stagger: {
-                amount: 0.25,
-                from: 'start',
+        .to(
+            '.animation-text--page',
+            {
+                opacity: 1,
+                duration: 0,
             },
-            ease: 'circ.out',
-        });
+            '<'
+        )
+        .to(
+            '.animation-text--page .char',
+            {
+                y: 0,
+                duration: 0.6,
+                stagger: {
+                    amount: 0.25,
+                    from: 'start',
+                },
+                ease: 'circ.out',
+            },
+            '<'
+        );
 
     const curtain = document.querySelector('#curtain') as HTMLElement;
     curtain.classList.remove('animate');

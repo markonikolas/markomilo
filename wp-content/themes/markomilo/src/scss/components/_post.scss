@@ -16,7 +16,7 @@
             font-size: 17px;
             line-height: 22px;
             font-style: italic;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.1rem;
 
             @include breakpoint(600) {
                 margin-top: unset;
@@ -43,8 +43,25 @@
         }
 
         &__link {
+            @extend %link;
+            font-size: inherit;
             font-family: 'Lora', serif;
-            margin-block: 1em;
+            padding: 0;
+
+            &::before {
+                top: 50%;
+                width: 25px;
+                right: unset;
+                left: -2rem;
+            }
+
+            &:hover {
+                &::after {
+                    height: 1px;
+                    top: 100%;
+                    left: 0;
+                }
+            }
         }
     }
 
@@ -62,8 +79,11 @@
 
         &__link {
             @extend %link;
+            font-family: 'Times Now', sans-serif;
 
-            font-family: 'Times Now', sans-serif !important;
+            &:hover {
+                font-family: 'Times Now Italic';
+            }
         }
     }
 }

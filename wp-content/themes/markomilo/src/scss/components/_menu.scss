@@ -12,14 +12,25 @@
     }
 
     &-item {
+        @extend %link;
+
         font: normal 400 24px/28px $heading-font-stack;
         color: $primary-color;
         list-style: none;
-        transition: color 350ms ease;
+        transition: color 350ms ease, transform 150ms ease;
+        padding: 0;
+
+        &::before {
+            top: 50%;
+            width: 25px;
+            right: unset;
+            left: -1rem;
+        }
 
         &:hover {
-            font-family: 'Times Now Italic';
-            font-style: normal;
+            &::after {
+                content: none;
+            }
         }
 
         &__link {

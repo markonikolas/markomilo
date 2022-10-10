@@ -13,7 +13,7 @@ const transitionBefore = async (timeline: GSAPTimeline) => {
         },
         {
             scaleY: 1.02,
-            duration: 0.5,
+            duration: 0.8,
             ease: 'power4.out',
             y: 0,
         }
