@@ -56,6 +56,8 @@
             }
 
             &:hover {
+                font-style: normal;
+
                 &::after {
                     height: 1px;
                     top: 100%;
