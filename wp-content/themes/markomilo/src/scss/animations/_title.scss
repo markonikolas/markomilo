@@ -40,10 +40,14 @@
 
     .char {
         display: inline-flex;
-        transform: translateY(120%);
+        transform: translateY(200%);
         color: $white-color;
         line-height: 1;
         font: normal 400 60px/69px 'Times Now', serif;
+
+        @include breakpoint(768) {
+            font-size: 100px;
+        }
     }
 
     .empty {
