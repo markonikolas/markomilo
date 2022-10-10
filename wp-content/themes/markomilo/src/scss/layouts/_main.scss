@@ -118,7 +118,9 @@
     }
 
     img + blockquote {
-        margin-top: 80px;
+        @include breakpoint(768) {
+            margin-top: 80px;
+        }
     }
 }
 

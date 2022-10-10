@@ -19,7 +19,7 @@
     width: 100vw;
 
     &.visible {
-        z-index: 999;
+        z-index: 99;
     }
 
     .animation-text {
@@ -33,7 +33,7 @@
 
 .animation-text {
     position: relative;
-    z-index: 9999;
+    z-index: 9;
     display: block;
     opacity: 0;
     font-family: 'Times Now', sans-serif;

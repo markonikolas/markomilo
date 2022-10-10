@@ -32,7 +32,8 @@ h4,
 h5,
 h6,
 p,
-span {
+span,
+blockquote {
     font: normal 400 17px/170% $text-font-stack;
 
     @extend %text-color;
@@ -41,4 +42,8 @@ span {
         font-size: 20px;
         line-height: 180%;
     }
+}
+
+blockquote {
+    font-style: italic;
 }

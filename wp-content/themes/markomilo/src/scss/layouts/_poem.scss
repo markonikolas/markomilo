@@ -1,7 +1,9 @@
 .single-poem {
     .main {
-        @include breakpoint(768, max) {
-            margin-bottom: 200px;
+        margin-bottom: 200px;
+
+        @include breakpoint(768) {
+            margin-bottom: 140px;
         }
     }
 }

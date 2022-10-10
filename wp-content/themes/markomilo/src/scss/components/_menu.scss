@@ -1,7 +1,7 @@
 .menu {
     display: flex;
     justify-content: space-around;
-    padding: 35px 0 0;
+    padding: 18px 0 0;
     margin: 0;
 
     @include breakpoint(800) {
@@ -19,7 +19,7 @@
 
         &:hover {
             font-family: 'Times Now Italic';
-            font-style: italic;
+            font-style: normal;
         }
 
         &__link {
@@ -35,7 +35,7 @@
 
 .current-menu-item {
     font-family: 'Times Now Italic';
-    font-style: italic;
+    font-style: normal;
     color: $brand-color;
 
     .menu-item__link {

@@ -70,21 +70,20 @@ blockquote {
 }
 
 hr {
-    margin-block: 60px;
     width: 100%;
     opacity: 0.2;
+    margin-block: 40px;
+
+    @include breakpoint(768) {
+        margin-block: 60px;
+    }
 }
 
 blockquote {
     margin: 0;
-    font-style: italic;
-    font-family: 'Lora';
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 180%;
-    color: $near-black-color;
+}
 
-    p {
-        font-style: italic;
-    }
+em {
+    font-family: 'Times Now Italic';
+    font-style: normal;
 }
