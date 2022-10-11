@@ -19,7 +19,7 @@ function add_curtain() { ?>
 			<h1 class="animation-text text-center">Marko <em>Milo</em></h1>
 		</div>
 		<video class="animation" loop muted>
-			<source src="<?php echo get_stylesheet_directory_uri(); //phpcs:ignore ?>/assets/video/earth.mp4" type="video/mp4" />
+			<source src="<?php echo get_stylesheet_directory_uri(); //phpcs:ignore ?>/assets/video/markomilo.webm" type="video/webm" />
 		</video>
 	</section>
 	<?php

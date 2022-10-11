@@ -3,6 +3,10 @@
     display: none;
     transition: opacity 350ms ease;
     filter: saturate(0.5);
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     &.visible {
         opacity: 1;
@@ -23,12 +27,14 @@
     }
 
     .animation-text {
+        z-index: 9999;
         padding-inline: 1rem;
     }
 }
 
 .animation-text-wrapper {
     overflow: hidden;
+    margin-top: -25rem;
 }
 
 .animation-text {
