@@ -1,7 +1,4 @@
-import gsap from 'gsap';
-
 const transitionAfter = async (timeline: GSAPTimeline) => {
-    const textTimeline = gsap.timeline();
     await timeline
         .to('.animation', {
             display: 'block',

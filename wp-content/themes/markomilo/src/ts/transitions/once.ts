@@ -78,9 +78,11 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
 
     curtain.style.transform = 'translateY(-100%)';
     document.querySelector('.animation-overlay')?.classList.remove('visible');
-    return document
+    document
         .querySelector('#curtain-path')
         ?.setAttribute('d', 'M0,1005S175,995,500,995s500,5,500,5V0H0Z');
+
+    video.pause();
 };
 
 export default transitionOnce;

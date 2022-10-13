@@ -10,6 +10,7 @@ function init() {
      * Init Barba config.
      */
     barba.init(config);
+
     /**
      * Change active item on nav menu.
      */

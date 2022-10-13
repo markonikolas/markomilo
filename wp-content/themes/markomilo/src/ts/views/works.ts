@@ -6,6 +6,7 @@ const works = {
 
     beforeEnter: async (data: IHookData) => {
         infiniteMenu(data);
+        return data;
     },
 };
 

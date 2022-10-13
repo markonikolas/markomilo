@@ -1,10 +1,6 @@
-import { splitTextToNodes } from '../helpers';
-
 const transitionBefore = async (timeline: GSAPTimeline) => {
     document.querySelector('.curtain')?.classList.add('animate');
     document.querySelector('.animation-overlay')?.classList.add('visible');
-
-    splitTextToNodes(document.querySelector('.animation-text'));
 
     return await timeline.fromTo(
         '.curtain',
