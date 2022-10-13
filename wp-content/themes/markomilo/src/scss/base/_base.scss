@@ -22,12 +22,25 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    &.page-template-poetry {
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
 
-    &::-webkit-scrollbar {
-        display: none;
+        &::-webkit-scrollbar {
+            visibility: hidden;
+        }
+    }
+
+    &.page-template-poetry {
+        main::-webkit-scrollbar {
+            visibility: hidden;
+        }
+
+        main {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
     }
 }
 

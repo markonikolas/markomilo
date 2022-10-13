@@ -7,6 +7,8 @@
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 550px;
+    width: auto;
 
     &.visible {
         opacity: 1;
@@ -27,14 +29,25 @@
     }
 
     .animation-text {
+        display: flex !important;
+        gap: 10px;
         z-index: 9999;
         padding-inline: 1rem;
+        overflow: hidden;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1 !important;
+
+        .char {
+            font: normal 400 50px/1 'Times Now', serif;
+        }
     }
 }
 
 .animation-text-wrapper {
     overflow: hidden;
-    margin-top: -25rem;
 }
 
 .animation-text {

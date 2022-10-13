@@ -89,13 +89,11 @@ export default class InfiniteMenu {
     scrollUpdate() {
         this.scrollPos = this.getScrollPos();
 
-        const paddingTop = Number(
-            window.getComputedStyle(this.DOM.el).paddingTop.split('px')[0]
-        );
-
         if (this.scrollPos === 0) {
             return;
         }
+
+        console.log(123);
 
         if (this.clonesHeight + this.scrollPos >= this.scrollHeight) {
             // Scroll to the top when you’ve reached the bottom

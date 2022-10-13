@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import { splitTextToNodes } from '../helpers';
 
 const transitionOnce = async (timeline: GSAPTimeline) => {
@@ -26,15 +27,16 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
     await timeline
         .to('.animation-overlay', {
             opacity: 1,
-            duration: 0.5,
+            duration: 0,
         })
         .to('.animation', {
             display: 'block',
             zIndex: 99,
+            duration: 0.25,
         })
         .to('.animation', {
             opacity: 1,
-            duration: 1,
+            duration: 0,
         });
 
     await timeline
