@@ -93,8 +93,6 @@ export default class InfiniteMenu {
             return;
         }
 
-        console.log(123);
-
         if (this.clonesHeight + this.scrollPos >= this.scrollHeight) {
             // Scroll to the top when you’ve reached the bottom
             this.setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling

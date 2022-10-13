@@ -46,6 +46,11 @@
         }
     }
 
+    &:active,
+    &:focus {
+        color: #000000;
+    }
+
     &::before {
         content: '';
         top: 55%;
