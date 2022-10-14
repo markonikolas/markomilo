@@ -56,17 +56,17 @@ $purchase_link = get_field( 'purchase_link' );
                 <p class="post-meta__text"><?php echo $term_name; // @phpcs:ignore ?></p>
 			</div>
 
-			<div>
-				<h3 class="post-meta__title"><?php esc_html_e( 'Printed book:', 'markomilo' ); ?></h3>
+			<?php if ( $purchase_link ) : ?>
+				<div>
+					<h3 class="post-meta__title"><?php esc_html_e( 'Printed book:', 'markomilo' ); ?></h3>
 
-				<?php if ( $purchase_link ) : ?>
 					<p class="post-meta__text">
 						<a class="post-meta__link underline" href="<?php echo esc_url( $purchase_link['url'] ); ?>">
 							<?php echo esc_attr( $purchase_link['title'] ); ?>
 						</a>
 					</p>	
-				<?php endif; ?>
-			</div>
+				</div>
+			<?php endif; ?>
 		</section>
    
 		<hr>
