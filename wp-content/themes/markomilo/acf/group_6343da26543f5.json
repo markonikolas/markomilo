@@ -3,8 +3,27 @@
     "title": "Page Quote",
     "fields": [
         {
+            "key": "field_6349105fafeef",
+            "label": "Show Synopsis",
+            "name": "show_synopsis",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
             "key": "field_6343da2726fa6",
-            "label": "Quote value",
+            "label": "Synopsis",
             "name": "quote_value",
             "type": "textarea",
             "instructions": "",
@@ -47,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1665394800
+    "modified": 1665732843
 }
