@@ -13,6 +13,11 @@ const defaultTransition = {
     name: 'default-transition',
 
     once: (data: ITransitionData) => {
+        gsap.to(data.next.container, {
+            visibility: 'visible',
+            duration: 0.5,
+        });
+
         if (data.next.namespace === 'Works') {
             return transitionOnce(timeline);
         }
@@ -26,8 +31,12 @@ const defaultTransition = {
         splitTextToNodes(title);
     },
 
-    enter: () => {
+    enter: (data: ITransitionData) => {
         window.scrollTo({ top: 0 });
+        gsap.to(data.next.container, {
+            visibility: 'visible',
+            duration: 0.5,
+        });
     },
 
     after: () => transitionAfter(timeline),

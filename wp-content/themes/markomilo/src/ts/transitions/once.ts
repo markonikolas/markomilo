@@ -1,4 +1,3 @@
-import gsap from 'gsap';
 import { splitTextToNodes } from '../helpers';
 
 const transitionOnce = async (timeline: GSAPTimeline) => {
@@ -11,18 +10,12 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
 
     await video.play();
 
-    await timeline.fromTo(
-        '.curtain',
-        {
-            y: '-100%',
-        },
-        {
-            scaleY: 1.02,
-            duration: 0.8,
-            ease: 'power4.out',
-            y: 0,
-        }
-    );
+    await timeline.to('.curtain', {
+        scaleY: 1.02,
+        duration: 0.01,
+        ease: 'power4.out',
+        y: 0,
+    });
 
     await timeline
         .to('.animation-overlay', {

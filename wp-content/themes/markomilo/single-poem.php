@@ -43,12 +43,14 @@ $purchase_link = get_field( 'purchase_link' );
 
 		<?php endif; ?>
 
-		<?php the_content(); ?>
+		<section class="post-content">
+			<?php the_content(); ?>
+		</section>
 
 		<section class="post-meta">
 			<div>
 				<h3 class="post-meta__title"><?php esc_html_e( 'Date:', 'markomilo' ); ?></h3>
-				<p class="post-meta__text"><?php echo get_the_date( 'd D Y' ); ?></p>
+				<p class="post-meta__text"><?php echo get_the_date( 'd M Y' ); ?></p>
 			</div>
 
 			<div>
