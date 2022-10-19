@@ -41,3 +41,54 @@ function add_link_elements() {
 	<?php
 }
 add_action( 'wp_head', __NAMESPACE__ . '\add_link_elements' );
+
+/**
+ * Add meta tags.
+ */
+function add_meta_tags() {
+	global $post;
+
+	$meta         = wp_strip_all_tags( $post->post_content );
+	$meta         = strip_shortcodes( $post->post_content );
+	$meta         = str_replace( array( "\n", "\r", "\t" ), ' ', $meta );
+	$meta         = substr( $meta, 0, 160 );
+	$keywords     = get_the_category( $post->ID );
+	$metakeywords = '';
+
+	foreach ( $keywords as $keyword ) {
+		$metakeywords .= $keyword->cat_name . ', ';
+	}
+
+	if ( is_front_page() ) {
+		echo '<meta name="description" content="Marko Milo - Writter, copywritter and music lover." />' . "\n";
+		echo '<meta name="keywords" content="Marko Milo, Writter, Copywritter" />' . "\n";
+	} else {
+
+		echo '<meta name="description" content="' . esc_html( $meta ) . '" />' . "\n";
+		echo '<meta name="keywords" content="' . esc_html( $metakeywords ) . '" />' . "\n";
+	}
+}
+add_action( 'wp_head', __NAMESPACE__ . '\add_meta_tags', 2 );
+
+/**
+ * Add css for html and body
+ * Fixes the flickering issue
+ * when first loading the page.
+ */
+function add_styles_on_front_page() {
+	if ( is_front_page() ) :
+		?>
+
+		<style>
+			html {
+				background-color: #000000;
+			}
+			body {
+				display: none;
+			}
+		</style>
+
+		<?php
+	endif;
+}
+add_action( 'wp_head', __NAMESPACE__ . '\add_styles_on_front_page' );

@@ -12,14 +12,14 @@ function init() {
     barba.init(config);
 
     /**
-     * Change active item on nav menu.
-     */
-    barba.hooks.afterEnter(setActiveNavItem);
-
-    /**
      * Inject body class from next container's body.
      */
     barba.hooks.afterLeave(replaceBodyClass);
+
+    /**
+     * Change active item on nav menu.
+     */
+    barba.hooks.afterEnter(setActiveNavItem);
 }
 
 window.addEventListener('load', init);

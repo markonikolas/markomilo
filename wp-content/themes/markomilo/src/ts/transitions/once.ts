@@ -7,7 +7,6 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
     splitTextToNodes(document.querySelector('.animation-text'));
 
     const video = document.querySelector('.animation') as HTMLVideoElement;
-
     await video.play();
 
     await timeline.to('.curtain', {
@@ -16,6 +15,9 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
         ease: 'power4.out',
         y: 0,
     });
+
+    document.documentElement.style.backgroundColor = 'transparent';
+    document.body.style.display = 'block';
 
     await timeline
         .to('.animation-overlay', {
