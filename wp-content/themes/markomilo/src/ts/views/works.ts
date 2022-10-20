@@ -1,11 +1,11 @@
 import { IHookData } from '../hooks/tyeps';
-import infiniteMenu from '../hooks/initInfiniteMenu';
+import onLoad from '../infiniteMenu';
 
 const works = {
     namespace: 'Works',
 
     beforeEnter: async (data: IHookData) => {
-        infiniteMenu(data);
+        onLoad();
         return data;
     },
 };

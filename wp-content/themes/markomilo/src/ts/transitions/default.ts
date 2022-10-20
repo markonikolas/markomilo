@@ -37,6 +37,7 @@ const defaultTransition = {
             visibility: 'visible',
             duration: 0.5,
         });
+
     },
 
     after: () => transitionAfter(timeline),
