@@ -68,6 +68,9 @@
 
     &__link {
         flex: none;
+        // 100% of the screen / 8 links to fit the page.
+        height: 12.5%;
+        min-height: 96px;
 
         @include breakpoint(800) {
             margin-right: 10px;
