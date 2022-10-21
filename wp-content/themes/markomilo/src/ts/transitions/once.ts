@@ -16,9 +16,6 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
         y: 0,
     });
 
-    document.documentElement.style.backgroundColor = 'transparent';
-    document.body.style.display = 'block';
-
     await timeline
         .to('.animation-overlay', {
             opacity: 1,

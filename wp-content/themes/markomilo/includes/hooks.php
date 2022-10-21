@@ -69,26 +69,3 @@ function add_meta_tags() {
 	}
 }
 add_action( 'wp_head', __NAMESPACE__ . '\add_meta_tags', 2 );
-
-/**
- * Add css for html and body
- * Fixes the flickering issue
- * when first loading the page.
- */
-function add_styles_on_front_page() {
-	if ( is_front_page() ) :
-		?>
-
-		<style>
-			html {
-				background-color: #000000;
-			}
-			body {
-				display: none;
-			}
-		</style>
-
-		<?php
-	endif;
-}
-add_action( 'wp_head', __NAMESPACE__ . '\add_styles_on_front_page' );
