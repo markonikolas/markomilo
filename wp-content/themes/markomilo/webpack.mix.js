@@ -11,7 +11,6 @@ mix.ts('src/ts/main.ts', 'js')
 mix.browserSync({
     proxy: 'http://markomilo.local',
     open: true,
-    host: 'localhost:3000',
     files: [
         `${themePath}/**/*.php`,
         `${themePath}/**/*.js`,

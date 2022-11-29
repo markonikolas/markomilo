@@ -6,9 +6,6 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
 
     splitTextToNodes(document.querySelector('.animation-text'));
 
-    const video = document.querySelector('.animation') as HTMLVideoElement;
-    await video.play();
-
     await timeline.to('.curtain', {
         scaleY: 1.02,
         duration: 0.01,
@@ -75,8 +72,6 @@ const transitionOnce = async (timeline: GSAPTimeline) => {
     document
         .querySelector('#curtain-path')
         ?.setAttribute('d', 'M0,1005S175,995,500,995s500,5,500,5V0H0Z');
-
-    video.pause();
 };
 
 export default transitionOnce;
