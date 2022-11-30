@@ -39,6 +39,11 @@
         @include breakpoint(768, max) {
             transform: unset;
 
+            &:hover,
+            &:active {
+                color: v.$text-color;
+            }
+
             &::before,
             &::after {
                 display: none;
