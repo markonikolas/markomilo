@@ -38,6 +38,7 @@
 
         @include breakpoint(768, max) {
             transform: unset;
+            font-family: 'Times Now';
 
             &:hover,
             &:active {
